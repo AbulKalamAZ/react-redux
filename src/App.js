@@ -4,9 +4,17 @@ import "./App.css";
 import styled from "styled-components";
 
 const Title = styled.h1`
-  font-size: 3em;
+  font-size: 4.5em;
   font-weight: light;
-  color: palevioletred;
+  color: #fff;
+  cursor: pointer;
+`;
+
+const SubTitle = styled.h1`
+  font-size: 2em;
+  font-weight: light;
+  color: #fff;
+  cursor: pointer;
 `;
 
 const Wrapper = styled.div`
@@ -25,15 +33,28 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
+const DataBox = styled.div`
+  margin: 0 auto;
+  padding: 2.5em 0.5em;
+  width: 25%;
+  height: 70vh;
+  background: #ffffff81;
+  cursor: pointer;
+  border-radius: 5px;
+  font-family: "Ubuntu", sans-serif;
+  letter-spacing: 2px;
+  word-spacing: 3px;
+`;
+
 function App() {
   return (
     <div className="App">
+      <Wrapper></Wrapper>
       <Wrapper>
-        <Title>Hello, World!</Title>
-      </Wrapper>
-      <Wrapper>
-        <Button>Send Message</Button>
-        <Button primary>Send Message</Button>
+        <DataBox>
+          <Title>10</Title>
+          <SubTitle>Location, Location</SubTitle>
+        </DataBox>
       </Wrapper>
     </div>
   );

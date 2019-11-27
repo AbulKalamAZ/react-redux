@@ -1,4 +1,8 @@
+/* Importing font called Ubuntu */
+@import url("https://fonts.googleapis.com/css?family=Ubuntu&display=swap");
+
 .App {
   text-align: center;
-  color: #f6f6f6;
+  color: #ffffff81;
+  font-family: "Ubuntu", sans-serif;
 }
