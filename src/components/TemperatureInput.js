@@ -60,7 +60,7 @@ export default class TemperatureInput extends Component {
             onChange={e => this.props.onChange(e, scale)}
           />
 
-          <BoilingVerdict temp={parseFloat(temp)} />
+          <BoilingVerdict scale={scale} temp={parseFloat(temp)} />
         </BoxBody>
       </TemperatureInputBox>
     );

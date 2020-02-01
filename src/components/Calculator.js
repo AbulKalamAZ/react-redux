@@ -8,7 +8,8 @@ export default class Calculator extends Component {
 
     this.state = {
       temperature: "",
-      scale: "c"
+      scale: "c",
+      showError: false
     };
   }
 
@@ -17,7 +18,7 @@ export default class Calculator extends Component {
   };
 
   toFarenheit = celsius => {
-    return (celsius * 9) / 5 - 32;
+    return (celsius * 9) / 5 + 32;
   };
 
   //method that will conver both celsius and farenheit
@@ -41,14 +42,21 @@ export default class Calculator extends Component {
       scale: scale
     });
   };
+  //Method that will handle error
+
+  handleError = () => {
+    this.setState(state => ({
+      showError: !state.showError
+    }));
+  };
 
   render() {
-    const temperature = this.state.temperature;
-    let scale = this.state.scale;
+    const { temperature, scale } = this.state;
     const celsius =
       scale === "f"
         ? this.tempConverter(temperature, this.toCelsius)
         : temperature;
+
     const farenheit =
       scale === "c"
         ? this.tempConverter(temperature, this.toFarenheit)

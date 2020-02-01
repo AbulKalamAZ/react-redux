@@ -12,14 +12,26 @@ const Text = styled.p`
   color: #666;
 `;
 
-export default function BoilingVerdict(props) {
-  return (
-    <TextBox>
-      {props.temp >= 100 ? (
-        <Text>The water will boil</Text>
-      ) : (
-        <Text>The water will not boil</Text>
-      )}
-    </TextBox>
-  );
+export default function BoilingVerdict({ temp, scale }) {
+  if (scale === "c") {
+    return (
+      <TextBox>
+        {temp >= 100 ? (
+          <Text>The water will boil</Text>
+        ) : (
+          <Text>The water will not boil</Text>
+        )}
+      </TextBox>
+    );
+  } else {
+    return (
+      <TextBox>
+        {temp >= 212 ? (
+          <Text>The water will boil</Text>
+        ) : (
+          <Text>The water will not boil</Text>
+        )}
+      </TextBox>
+    );
+  }
 }
