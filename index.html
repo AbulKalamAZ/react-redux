@@ -23,12 +23,16 @@
 
     <script type="text/babel">
       class App extends React.Component {
+        state = {
+          name: "Azad",
+          age: 28,
+        };
         render() {
+          const { name, age } = this.state;
           return (
             <div>
-              <h1>hello everyone!</h1>
-              <p>Random number</p>
-              <p>{Math.floor(Math.random() * 100)}</p>
+              <h1>Hey! This is {name}</h1>
+              <p>And now I'm {age}</p>
             </div>
           );
         }
