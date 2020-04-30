@@ -1,21 +1,10 @@
 import React from "react";
-import "./App.css";
-
-import styled from "styled-components";
-
-import Calculator from "./components/Calculator";
-
-const Wrapper = styled.div`
-  padding: 2em;
-  margin: 0 auto;
-`;
+import "./App.scss";
 
 function App() {
   return (
     <div className="App">
-      <Wrapper>
-        <Calculator />
-      </Wrapper>
+      <h1>hello world</h1>
     </div>
   );
 }
