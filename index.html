@@ -28,24 +28,32 @@
           age: 28,
         };
 
-        makeMeOlder(e) {
-          console.log(e.target);
-        }
-        handleMouseOver(e) {
-          console.log(e.pageX, e.pageY);
-        }
-        handleCopy(e) {
+        handleNameChange = (e) => {
+          this.setState({
+            name: e.target.value,
+          });
+        };
+
+        handleFormSubmit = (e) => {
+          e.preventDefault();
+
+          this.setState((state) => {
+            name: state.name + "!";
+          });
+        };
+        handleCopy = (e) => {
           console.log(e);
           console.log("Try being original!");
-        }
+        };
         render() {
           const { name, age } = this.state;
           return (
             <div>
               <h1 onCopy={this.handleCopy}>Hey! This is {name}</h1>
-              <p>And now I'm {age}</p>
-              <button onClick={this.makeMeOlder}>Make me older</button>
-              <button onMouseOver={this.handleMouseOver}>Hover me</button>
+              <form onSubmit={this.handleFormSubmit}>
+                <input type="text" onChange={this.handleNameChange} />
+                <button>Submit</button>
+              </form>
             </div>
           );
         }
