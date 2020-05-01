@@ -20,12 +20,26 @@ export default function User(props) {
     return str;
   };
   return users.map((user) => {
-    return (
-      <div className="user" key={user.id}>
-        <h1>Name: {user.name}</h1>
-        <h3>Age: {user.age}</h3>
-        <h3>Skills: {formatSkills(user.skills)}</h3>
-      </div>
-    );
+    //using ternary operator
+    // return user.age > 20 ? (
+    //   <div className="user" key={user.id}>
+    //     <h1>Name: {user.name}</h1>
+    //     <h3>Age: {user.age}</h3>
+    //     <h3>Skills: {formatSkills(user.skills)}</h3>
+    //   </div>
+    // ) : null;
+
+    //using if else
+    if (user.age > 20) {
+      return (
+        <div className="user" key={user.id}>
+          <h1>Name: {user.name}</h1>
+          <h3>Age: {user.age}</h3>
+          <h3>Skills: {formatSkills(user.skills)}</h3>
+        </div>
+      );
+    } else {
+      return null;
+    }
   });
 }
