@@ -3,10 +3,37 @@
 
 .App {
   width: 100%;
-  height: auto;
-  padding: 10%;
+  min-height: 100vh;
+  max-height: auto;
+  padding: 3% 10% 10% 10%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   color: #ffffffb0;
   font-family: "Ubuntu", sans-serif;
+
+  .navbar {
+    width: 100%;
+    padding-left: 100px;
+    display: flex;
+    justify-content: flex-start;
+
+    button {
+      width: 150px;
+      height: auto;
+      padding: 10px;
+      margin-left: 10px;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #000000be;
+      cursor: pointer;
+    }
+  }
+  .users {
+    width: 100%;
+    height: auto;
+    padding: 50px 100px;
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
