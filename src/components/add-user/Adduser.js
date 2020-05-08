@@ -17,7 +17,7 @@ export default class Adduser extends Component {
         name: name,
         age: age,
         skills: skill,
-        id: skill,
+        id: Math.random(),
       });
     } else {
       console.log("enter all the value");

@@ -2,7 +2,7 @@ import React from "react";
 import "./User.scss";
 
 export default function User(props) {
-  const { users } = props;
+  const { users, deleteUser } = props;
   console.log(users);
 
   return users.map((user, index) => {
@@ -22,6 +22,13 @@ export default function User(props) {
           <h1>Name: {user.name}</h1>
           <h3>Age: {user.age}</h3>
           <h3>Skills: {user.skills}</h3>
+          <button
+            onClick={() => {
+              deleteUser(user.id);
+            }}
+          >
+            delete
+          </button>
         </div>
       );
     } else {

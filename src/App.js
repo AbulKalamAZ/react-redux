@@ -42,11 +42,11 @@ class App extends React.Component {
   };
 
   addUser = (user) => {
-    let users = this.state.users;
+    let users = [...this.state.users, user];
     let isShowDashboard = this.state.isShowDashboard;
 
     this.setState({
-      users: users.concat(user),
+      users: users,
       isShowDashboard: !isShowDashboard,
     });
     console.log("logged from app");
@@ -57,6 +57,16 @@ class App extends React.Component {
       return {
         isShowDashboard: !state.isShowDashboard,
       };
+    });
+  };
+
+  deleteUser = (id) => {
+    let updatedUsers = [...this.state.users].filter((user) => {
+      return id !== user.id;
+    });
+
+    this.setState({
+      users: updatedUsers,
     });
   };
 
@@ -71,7 +81,7 @@ class App extends React.Component {
         </div>
         <div className="users">
           {isShowDashboard ? (
-            <User users={users} />
+            <User users={users} deleteUser={this.deleteUser} />
           ) : (
             <AddUser addUserMethod={this.addUser} />
           )}
