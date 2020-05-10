@@ -24,11 +24,24 @@ export default class Welcome extends Component {
       .then((json) => console.log(json));
   }
 
-  componentDidUpdate() {
+  shouldComponentUpdate(nextProps, nextState) {
+    if (nextState.activeButton === this.state.activeButton) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
     console.log("Component Did Update!");
-    fetch(`https://jsonplaceholder.typicode.com/${this.state.activeButton}`)
-      .then((response) => response.json())
-      .then((json) => console.log(json));
+    if (prevState.activeButton !== this.state.activeButton) {
+      fetch(`https://jsonplaceholder.typicode.com/${this.state.activeButton}`)
+        .then((response) => response.json())
+        .then((json) => console.log(json));
+    }
+
+    // console.log("prevProps", prevState.activeButton);
+    // console.log("currState", this.state.activeButton);
   }
 
   render() {
