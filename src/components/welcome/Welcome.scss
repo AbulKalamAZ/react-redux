@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  .welcome-board {
+    button {
+      padding: 10px;
+      margin: 10px;
+      font-size: 1.2rem;
+      font-weight: 400;
+      cursor: pointer;
+    }
+  }
+  h2 {
+    margin-top: 1.5rem;
+    font-weight: 400;
+  }
+}
